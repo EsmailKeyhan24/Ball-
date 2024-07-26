@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contanier{
+            width: 70%;
+            height: 80vh;
+            border:2px solid rgba(0, 0, 0, 0.205);
+            position: relative;
+        }
+        .contanier>.line{
+            content:'';
+            display: block;
+            width:70px;
+            height: 4px;
+            background-color:black;
+            border-radius: 3px;
+            position: absolute;
+            bottom: 0;left: 0;
+            transform-origin:left;
+            transform: rotate(-55deg);
+        }
+        .contanier>section{
+            width: 15%;
+            height: 2px;
+            border:2px solid red;
+            position: absolute;
+        }
+        .contanier>section:nth-of-type(1){
+            top: 0;left: 0;
+        }
+        .contanier>section:nth-of-type(2){
+            bottom: 0;left: 20%;
+        }
+        .contanier>section:nth-of-type(3){
+            top:0;right: 40%;
+        }
+        .contanier>section:nth-of-type(4){
+            bottom: 0;left: 65%;
+        }
+        .contanier>section:nth-of-type(5){
+            top: 0;right: 0;
+        }
+        .contanier>.ball{
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color:black;
+            border-radius: 50%;
+            transform:translate(50px,63vh);
+            animation:ball 10s linear infinite alternate;
+        }
+        @keyframes ball {
+            0%{
+                transform:translate(50px,63vh);
+                /* transform:translate(370px,-10px); */
+            }
+            17%{
+                transform:translate(370px,-10px);
+                /* transform:translate(500px,75vh); */
+            }
+            35%{
+                transform:translate(500px,75vh);
+                /* transform:translate(650px,-10px); */
+            }
+            50%{
+                 transform:translate(650px,-10px);
+                /* transform:translate(500px,75vh); */
+            }
+            60%{
+                transform:translate(500px,75vh);
+                /* transform:translate(370px,-10px); */
+            }
+             
+            70%{
+                transform:translate(370px,-10px);
+                /* transform:translate(180px,75vh); */
+            }
+            
+            80%{
+                transform:translate(170px,75vh);
+            }
+           
+            90%{
+                transform:translate(50px,-10px);
+            }
+             
+            100%{
+                /* transform:translate(370px,-10px); */
+                transform:translate(50px,63vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contanier">
+        <div class="line"></div>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <span class="ball"></span>
+    </div>
+</body>
+    <script>
+        setInterval(() => {
+            document.getElementsByClassName('line')[0].style.width='100px'
+        },2000);
+    </script>
+</html>
